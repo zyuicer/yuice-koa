@@ -1,0 +1,29 @@
+{
+  "name": "<%= packageName  %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.14.1"
+    <% if(middleware.multer) { %>
+    ,"@koa/multer": "^3.0.2"
+    <% } %> 
+    <% if(middleware.bodyparser) { %>
+    ,"koa-bodyparser": "^4.3.0"
+    <% } %> 
+    <% if(middleware.router) { %>
+    ,"koa-router": "^12.0.0"
+    <% } %> 
+    <% if(middleware.static) { %>
+    ,"koa-static": "^5.0.0"
+    <% } %> 
+    
+  }
+}
